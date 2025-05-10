@@ -114,6 +114,14 @@ if log_reason != "Select...":
 
         elif log_reason == "Game Won":
             win_quote = st.text_input("Victory Quote (optional)", "You probably got one more in ya.")
+            last_circle_location = st.selectbox("Last Circle Locaiton", [
+                "Airport", "Boneyard", "Dam", "Downtown", "Farmland", "Hills", "Hospital", "Lumber",
+                "Military Base", "Park", "Port", "Prison", "Promenade East", "Promenade West", "Quarry",
+                "Stadium", "Storage Town", "Superstore", "Train Station", "TV Station"
+            ])
+            damage_dealt = st.number_input("Damage Dealt", min_value=0)
+            eliminations = st.number_input("Eliminations", min_value=0)
+            kills = st.number_input("Total Kills", min_value=0)
             submit = st.form_submit_button("Submit")
             if submit:
                 data = {
