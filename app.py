@@ -13,7 +13,7 @@ gamer_tag = st.selectbox(
 
 # --- Input Reason Selection (appears only after gamer tag is selected) ---
 if gamer_tag != "Select...":
-    log_reason = st.selectbox("Input Reason", ["Select...", "Death/Gulag", "Current Game Progress Update", "Team Wipe/Game Lost", "Game Won"])
+    log_reason = st.selectbox("Input Reason", ["Select...", "Death/Gulag", "Team Wipe/Game Lost", "Game Won"])
 else:
     st.warning("Please select your gamer tag to begin.")
     log_reason = "Select..."
@@ -48,43 +48,6 @@ if log_reason != "Select...":
                     "Loadout": loadout,
                     "Number of Kills": number_kills,
                 }
-
-        elif log_reason == "Current Game Progress Update":
-            alive = st.selectbox("Currently Alive?", ["Yes", "No"])
-
-            if alive == "Yes":
-                current_location = st.selectbox("Current Location", [
-                    "Airport", "Boneyard", "Dam", "Downtown", "Farmland", "Hills", "Hospital", "Lumber",
-                    "Military Base", "Park", "Port", "Prison", "Promenade East", "Promenade West", "Quarry",
-                    "Stadium", "Storage Town", "Superstore", "Train Station", "TV Station"
-                ])
-                individ_cash = st.number_input("Your Individual Cash Total", min_value=0)
-                loadout = st.selectbox("Loadout?", ["Yes", "No"])
-                number_kills = st.number_input("Number of Kills", min_value=0)
-
-                submit = st.form_submit_button("Submit")
-                if submit:
-                    data = {
-                        "Alive": alive,
-                        "Current Location": current_location,
-                        "Cash": individ_cash,
-                        "Loadout": loadout,
-                        "Number of Kills": number_kills
-                    }
-
-            else:
-                death_reason = st.selectbox("Death Reason", [
-                    "Justus said, 'Let's play slow' then pushed a 1v4 and said 'My bad y'all.'",
-                    "Oh fuck oh fuck on me on me on me! He's cracked, he's soooo bad, fuck!... WILL, WHERE WERE YOU?? GOD DAMNIT!",
-                    "Will shot everything but the enemy.",
-                    "Ryan got shot out of the air."
-                ])
-                submit = st.form_submit_button("Submit")
-                if submit:
-                    data = {
-                        "Alive": alive,
-                        "Death Reason": death_reason
-                    }
 
         elif log_reason == "Team Wipe/Game Lost":
             loss_reason = st.selectbox("Loss Reason", [
