@@ -122,4 +122,7 @@ if submit and data:
         worksheet.append_row(headers)
 
     worksheet.append_row(row)
-    st.success("You probably got one more in 'ya...")
+    if log_reason in ["Team Wipe/Game Lost","Game Won"]:
+        st.success("...We ain't shit on three...")
+    else:
+        st.success("Time to lock tf in brotha.")
