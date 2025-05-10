@@ -49,7 +49,7 @@ if log_reason != "Select...":
                     "Number of Kills": number_kills,
                 }
 
-        elif log_reason == "Game Update":
+        elif log_reason == "Current Game Progress Update":
             alive = st.selectbox("Currently Alive?", ["Yes", "No"])
 
             if alive == "Yes":
