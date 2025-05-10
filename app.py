@@ -37,7 +37,7 @@ if log_reason != "Select...":
                 "Stadium", "Storage Town", "Superstore", "Train Station", "TV Station"
             ])
             loadout = st.selectbox("Loadout?", ["Yes", "No"])
-            number_kills = st.number_input("Number of Kills", min_value=0)
+            number_kills = st.number_input("Your Total Kills", min_value=0)
 
             submit = st.form_submit_button("Submit")
             if submit:
@@ -56,9 +56,9 @@ if log_reason != "Select...":
                 "Will shot everything but the enemy.",
                 "Ryan got shot out of the air."
             ])
-            damage_dealt = st.number_input("Damage Dealt", min_value=0)
-            eliminations = st.number_input("Eliminations", min_value=0)
-            kills = st.number_input("Total Kills", min_value=0)
+            damage_dealt = st.number_input("Your Total Damage Dealt", min_value=0)
+            eliminations = st.number_input("Your Total Eliminations", min_value=0)
+            kills = st.number_input("Your Total Kills", min_value=0)
             team_loss_location = st.selectbox("Team Loss Location", [
                 "Airport", "Boneyard", "Dam", "Downtown", "Farmland", "Hills", "Hospital", "Lumber",
                 "Military Base", "Park", "Port", "Prison", "Promenade East", "Promenade West", "Quarry",
@@ -82,9 +82,9 @@ if log_reason != "Select...":
                 "Military Base", "Park", "Port", "Prison", "Promenade East", "Promenade West", "Quarry",
                 "Stadium", "Storage Town", "Superstore", "Train Station", "TV Station"
             ])
-            damage_dealt = st.number_input("Damage Dealt", min_value=0)
-            eliminations = st.number_input("Eliminations", min_value=0)
-            kills = st.number_input("Total Kills", min_value=0)
+            damage_dealt = st.number_input("Your Total Damage Dealt", min_value=0)
+            eliminations = st.number_input("Your Total Eliminations", min_value=0)
+            kills = st.number_input("Your Total Kill Count", min_value=0)
             submit = st.form_submit_button("Submit")
             if submit:
                 data = {
