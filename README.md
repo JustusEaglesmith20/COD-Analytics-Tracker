@@ -1,2 +1,2 @@
 # COD Analytics Tracker
-Tracker to help the boys frag out.
+Tracker to help the boys get more COD wins.
