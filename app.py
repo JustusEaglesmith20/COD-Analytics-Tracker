@@ -13,7 +13,7 @@ gamer_tag = st.selectbox(
 
 # --- Input Reason Selection (appears only after gamer tag is selected) ---
 if gamer_tag != "Select...":
-    log_reason = st.selectbox("Input Reason", ["Select...", "Death/Gulag", "Game Update", "Team Wipe/Game Lost", "Game Won"])
+    log_reason = st.selectbox("Input Reason", ["Select...", "Death/Gulag", "Current Game Progress Update", "Team Wipe/Game Lost", "Game Won"])
 else:
     st.warning("Please select your gamer tag to begin.")
     log_reason = "Select..."
