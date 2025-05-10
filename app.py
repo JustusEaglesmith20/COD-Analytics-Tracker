@@ -122,4 +122,4 @@ if submit and data:
         worksheet.append_row(headers)
 
     worksheet.append_row(row)
-    st.success("Data Logged to Google Sheet — LOCK IN!!!")
+    st.success("You probably got one more in 'ya...")
