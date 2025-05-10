@@ -76,7 +76,6 @@ if log_reason != "Select...":
                 }
 
         elif log_reason == "Game Won":
-            win_quote = st.text_input("Victory Quote (optional)", "You probably got one more in ya.")
             last_circle_location = st.selectbox("Last Circle Locaiton", [
                 "Airport", "Boneyard", "Dam", "Downtown", "Farmland", "Hills", "Hospital", "Lumber",
                 "Military Base", "Park", "Port", "Prison", "Promenade East", "Promenade West", "Quarry",
@@ -88,7 +87,10 @@ if log_reason != "Select...":
             submit = st.form_submit_button("Submit")
             if submit:
                 data = {
-                    "Victory Quote": win_quote
+                    "Damage Dealt": damage_dealt,
+                    "Eliminations": eliminations,
+                    "Total Kills": kills,
+                    "Team Loss Location": last_circle_location
                 }
 
 # --- Save to Google Sheet ---
