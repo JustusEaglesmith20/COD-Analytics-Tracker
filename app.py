@@ -76,7 +76,7 @@ if log_reason != "Select...":
                 }
 
         elif log_reason == "Game Won":
-            last_circle_location = st.selectbox("Last Circle Locaiton", [
+            last_circle_location = st.selectbox("Last Circle Location", [
                 "Airport", "Boneyard", "Dam", "Downtown", "Farmland", "Hills", "Hospital", "Lumber",
                 "Military Base", "Park", "Port", "Prison", "Promenade East", "Promenade West", "Quarry",
                 "Stadium", "Storage Town", "Superstore", "Train Station", "TV Station"
@@ -84,6 +84,11 @@ if log_reason != "Select...":
             damage_dealt = st.number_input("Your Total Damage Dealt", min_value=0)
             eliminations = st.number_input("Your Total Eliminations", min_value=0)
             kills = st.number_input("Your Total Kill Count", min_value=0)
+            initial_drop_location  = st.selectbox("Initial Drop Location",[
+                "Airport", "Boneyard", "Dam", "Downtown", "Farmland", "Hills", "Hospital", "Lumber",
+                "Military Base", "Park", "Port", "Prison", "Promenade East", "Promenade West", "Quarry",
+                "Stadium", "Storage Town", "Superstore", "Train Station", "TV Station"
+            ])
             submit = st.form_submit_button("Submit")
             if submit:
                 data = {
