@@ -5,13 +5,11 @@ from datetime import datetime
 
 st.title("Dirty Mike & the Boys' COD Analytics Tool")
 
-# --- Gamer Tag Selection ---
 gamer_tag = st.selectbox(
     "Select your Gamer Tag:",
     ["Select...", "CozySun400", "ouTTaBubbleGum1", "Justus20", "rcloud14"]
 )
 
-# --- Input Reason Selection (appears only after gamer tag is selected) ---
 if gamer_tag != "Select...":
     log_reason = st.selectbox("Input Reason", ["Select...", "Death/Gulag", "Team Wipe/Game Lost", "Game Won"])
 else:
@@ -21,7 +19,6 @@ else:
 data = {}
 submit = False
 
-# --- Form (only shows when both gamer_tag and log_reason are selected) ---
 if log_reason != "Select...":
     with st.form("game_form"):
         if log_reason == "Death/Gulag":
@@ -98,7 +95,6 @@ if log_reason != "Select...":
                     "Team Loss Location": last_circle_location
                 }
 
-# --- Save to Google Sheet ---
 if submit and data:
     column_template = {
         "Circle Stage": "NA", "Drop Location": "NA", "Death Location": "NA",
@@ -115,7 +111,6 @@ if submit and data:
         **{k: data.get(k, default) for k, default in column_template.items()}
     }
 
-    # Google Sheets API
     scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
     credentials = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scope)
     client = gspread.authorize(credentials)
